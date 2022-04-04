@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div>h1 {
+        text-align: center;
+        color: blue;
+    }
+
+    #container {
+        margin-left: 550px;
+        height: 400px;
+        width: 400px;
+        border: 1px solid black;
+        text-align: center;
+
+        display: grid;
+        /* grid-template-columns: repeat(0 1fr); */
+        /* grid-template-rows: repeat(4 1fr); */
+        gap: 0px;
+    }
+
+    #container>div>:nth-child(1) {
+        margin-top: 20px;
+    }
+
+    /* #container>div>:nth-child(2){
+margin-bottom: -30px;
+} */
+
+    #container button {
+        width: 255px;
+        height: 30px;
+        color: aliceblue;
+        background-color: rgb(38, 38, 167);
+        border-radius: 10px;
+    }
+
+    #container>div input {
+        width: 250px;
+        height: 20px;
+        border: 1px solid rgb(101, 101, 233);
+    }
+
+    #container h2 {
+
+        color: rgb(76, 75, 77);
+    }
+</style>
+
+<body id="body">
+    <div>
+        <h1><u>EXPENSE TRACKER</u></h1>
+    </div>
+
+    <div id="container">
+
+        <div>
+            <h2>Select Month</h2>
+            <input type="month" id="month">
+        </div>
+
+        <div>
+            <h2>Income</h2>
+            <input type="number" id="income">
+        </div>
+
+        <div>
+            <h2>Expense</h2>
+            <input type="number" id="expense">
+        </div>
+
+        <div>
+            <button onclick="calculate()" id="submit">Submit</button>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+<script>
+
+
+    var div = document.createElement("div")
+    div.style.display = "grid"
+    div.style.gridTemplateColumns = "auto auto auto auto auto"
+    div.style.marginTop = "30px"
+    div.style.gridGap = "10px"
+
+
+    function calculate() {
+
+        var mnth = document.getElementById("month").value
+        var inc = document.getElementById("income").value
+        var exp = document.getElementById("expense").value
+        var body = document.getElementById("body")
+
+        console.log(mnth, inc, exp)
+
+
+
+
+        var month = document.createElement("p")
+        var income = document.createElement("p")
+        var expense = document.createElement("p")
+        var savings = document.createElement("p")
+
+        month.textContent = "Month :" + mnth
+        income.textContent = "Income :" + inc
+        expense.textContent = "Expense :" + exp
+        savings.textContent = "Savings :" + (inc - exp)
+
+
+        var card = document.createElement("div")
+        card.style.border = "1px solid teal"
+        card.style.width = "150px"
+        card.appendChild(month)
+        card.appendChild(income)
+        card.appendChild(expense)
+        card.appendChild(savings)
+        div.appendChild(card)
+        body.append(div)
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</html>
