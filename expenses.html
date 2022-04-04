@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #form {
+        margin: auto;
+        padding-left: 100px;
+        height: 400px;
+        width: 400px;
+
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+
+    #h1 {
+        text-align: center;
+        color: rgb(10, 10, 238);
+    }
+
+    #form label {
+        color: rgb(0, 0, 0);
+        font-size: larger;
+        text-shadow: 5px;
+    }
+
+    #form select {
+        width: 306px;
+        height: 30px;
+        border: 1px solid rgb(83, 83, 235);
+    }
+
+    #form input {
+        width: 300px;
+        height: 30px;
+        border: 1px solid rgb(83, 83, 235);
+    }
+
+    #form>button {
+        width: 310px;
+        height: 30px;
+        border-radius: 14px;
+        background-color: rgb(27, 27, 126);
+        color: aliceblue;
+    }
+</style>
+
+<body>
+
+    <div>
+
+        <div id="h1">
+            <h1><u>EXPENSE TRACKER</u></h1>
+        </div>
+
+
+        <form id="form">
+            
+            <br><br><br>
+            <label for="month">Select Month</label><br>
+            <select id="month">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+
+            </select><br><br><br>
+
+            <label for="inc">Income</label><br>
+            <input type="number" id="inc" name="inc"><br><br><br>
+
+            <label for="exp">Expenses</label><br>
+            <input type="n" id="exp" name="exp"><br><br>
+
+            <br>
+            <button>Submit</button>
+           
+
+        </form>
+
+
+    </div>
+
+</body>
+
+<script>
+
+var x = document.querySelector("form").addEventListener("submit",calculate);
+
+
+function calculate(e){
+    event.preventDefault();
+    var mnth = document.querySelector("form>select").value
+    var inc = document.querySelector("form>input").value
+    var inc = document.querySelector("form:nth-child(5)").value
+    // var mnth = document.querySelector("form>select").value
+    console.log(mnth,inc)
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+</html>
